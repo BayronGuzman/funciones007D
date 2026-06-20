@@ -59,6 +59,26 @@ def agregar_reserva(lista):
     lista.append(reserva)
     print("Reserva agregada correctamente")
     
+def buscar_reserva(lista_r, nombre_r):
+    for r in range(len(lista_r)):
+        if nombre_r == lista_r[r]["huesped"]:
+            return r
+    return -1
+
+def eliminar_reserva(lista_r, nombre_r):
+    pos = buscar_reserva(lista_r, nombre_r)
+    if pos != -1:
+        lista_r.pop(pos)
+    else:
+        print(f"La reserva del huésped {nombre_r} no se encuentra registrada")
+
+def confirmar_reserva(lista_r):
+    for r in lista_r:
+        if r["noches"] >= 2:
+            r["confirmada"] = True
+        else:
+            r["confirmada"] = False
+    
     
 lista_reservas = []    
 op = 0
@@ -68,3 +88,32 @@ while op != 6:
     
     if op == 1:
         agregar_reserva(lista_reservas)
+        
+    elif op == 2:
+        nombre_buscar = input("Ingrese el nombre que desea buscar: ")
+        posicion = buscar_reserva(lista_reservas, nombre_buscar)
+        if posicion != -1:
+            print("Encontrado")
+            print(f"Reserva: {lista_reservas[posicion]}")
+        else:
+            print("No encontrado")
+            
+    elif op == 3:
+        nombre_eliminar = input("Ingrese el nombre que desea buscar: ")
+        eliminar_reserva(lista_reservas, nombre_eliminar)
+    elif op == 4:
+        confirmar_reserva(lista_reservas)
+    elif op == 5:
+        confirmar_reserva(lista_reservas)
+        print("=== LISTAS DE RESERVAS ===\t")
+        for r in lista_reservas:
+            print(f"Huésped: {r['huesped']}")
+            print(f"Habitación: {r['habitacion']}")
+            print(f"Noches: {r['noches']}")
+            if r['confirmada']:
+                print("Estado: CONFIRMADA\t")
+            else:
+                print("Estado: PENDIENTE\t")
+            print("***********************************************")
+    elif op == 6:
+        print("Gracias por usar el sistema. Vuelva Pronto")
