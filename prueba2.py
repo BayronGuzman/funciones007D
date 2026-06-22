@@ -71,6 +71,18 @@ def confirmar_reserva(lista_r):
             r["confirmada"] = True
         else:
             r["confirmada"] = False
+
+def mostrar_reserva(lista_r):
+    print("=== LISTAS DE RESERVAS ===\t")
+    for r in lista_reservas:
+        print(f"Huésped: {r['huesped']}")
+        print(f"Habitación: {r['habitacion']}")
+        print(f"Noches: {r['noches']}")
+        if r['confirmada']:
+            print("Estado: CONFIRMADA\t")
+        else:
+            print("Estado: PENDIENTE\t")
+        print("***********************************************")
     
     
 lista_reservas = []    
@@ -103,15 +115,7 @@ while op != 6:
         confirmar_reserva(lista_reservas)
     elif op == 5:
         confirmar_reserva(lista_reservas)
-        print("=== LISTAS DE RESERVAS ===\t")
-        for r in lista_reservas:
-            print(f"Huésped: {r['huesped']}")
-            print(f"Habitación: {r['habitacion']}")
-            print(f"Noches: {r['noches']}")
-            if r['confirmada']:
-                print("Estado: CONFIRMADA\t")
-            else:
-                print("Estado: PENDIENTE\t")
-            print("***********************************************")
+        mostrar_reserva(lista_reservas)
+        
     elif op == 6:
         print("Gracias por usar el sistema. Vuelva Pronto")
