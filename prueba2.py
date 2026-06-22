@@ -50,7 +50,7 @@ def agregar_reserva(lista):
         return
         
     reserva = {
-        "huesped": nombre.strip(),
+        "huesped": nombre.strip().upper(),
         "habitacion": int(habitacion),
         "noches": int(noches),
         "confirmada": False
