@@ -65,13 +65,6 @@ def buscar_reserva(lista_r, nombre_r):
             return r
     return -1
 
-def eliminar_reserva(lista_r, nombre_r):
-    pos = buscar_reserva(lista_r, nombre_r)
-    if pos != -1:
-        lista_r.pop(pos)
-    else:
-        print(f"La reserva del huésped {nombre_r} no se encuentra registrada")
-
 def confirmar_reserva(lista_r):
     for r in lista_r:
         if r["noches"] >= 2:
@@ -100,7 +93,12 @@ while op != 6:
             
     elif op == 3:
         nombre_eliminar = input("Ingrese el nombre que desea buscar: ")
-        eliminar_reserva(lista_reservas, nombre_eliminar)
+        pos = buscar_reserva(lista_reservas, nombre_eliminar)
+        if pos != -1:
+            lista_reservas.pop(pos)
+        else:
+            print(f"La reserva del huésped {nombre_eliminar} no se encuentra registrada")
+
     elif op == 4:
         confirmar_reserva(lista_reservas)
     elif op == 5:
