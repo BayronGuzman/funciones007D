@@ -13,8 +13,12 @@ while op != 6:
         nombre_buscar = input("Ingrese el nombre que desea buscar: ")
         posicion = f.buscar_reserva(lista_reservas, nombre_buscar)
         if posicion != -1:
-            print("Encontrado")
-            print(f"Reserva: {lista_reservas[posicion]}")
+            print("****** Reserva encontrada *******")
+            print(f"Huésped: {lista_reservas[posicion]['huesped']}")
+            print(f"Habitación: {lista_reservas[posicion]['habitacion']}")
+            print(f"Noches: {lista_reservas[posicion]['noches']}")
+            estado = "CONFIRMADA" if lista_reservas[posicion]['confirmada'] else "PENDIENTE"
+            print("*********************************")
         else:
             print("No encontrado")
             
@@ -25,9 +29,10 @@ while op != 6:
             lista_reservas.pop(pos)
         else:
             print(f"La reserva del huésped {nombre_eliminar} no se encuentra registrada")
-
+            
     elif op == 4:
         f.confirmar_reserva(lista_reservas)
+        
     elif op == 5:
         f.confirmar_reserva(lista_reservas)
         print("=== LISTAS DE RESERVAS ===\t")
@@ -40,5 +45,6 @@ while op != 6:
             else:
                 print("Estado: PENDIENTE\t")
             print("***********************************************")
+            
     elif op == 6:
         print("Gracias por usar el programa. Vuelva Pronto")
