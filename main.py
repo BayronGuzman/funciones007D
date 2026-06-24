@@ -14,14 +14,14 @@ while op != 6:
         posicion = f.buscar_reserva(lista_reservas, nombre_buscar)
         if posicion != -1:
             print("****** Reserva encontrada *******")
-            print(f"Huésped: {lista_reservas[posicion]['huesped']}")
-            print(f"Habitación: {lista_reservas[posicion]['habitacion']}")
-            print(f"Noches: {lista_reservas[posicion]['noches']}")
+            print(f"Nombre del huésped: {lista_reservas[posicion]['huesped']}")
+            print(f"Número de la Habitación: {lista_reservas[posicion]['habitacion']}")
+            print(f"Noches de Hospedaje: {lista_reservas[posicion]['noches']}")
             estado = "CONFIRMADA" if lista_reservas[posicion]['confirmada'] else "PENDIENTE"
             print(f"Estado: {estado}")
             print("*********************************")
         else:
-            print("No encontrado")
+            print(f"El huesped '{nombre_buscar}' no ha sido encontrado")
             
     elif op == 3:
         nombre_eliminar = input("Ingrese el nombre que desea buscar: ")
