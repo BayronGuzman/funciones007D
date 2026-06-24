@@ -28,8 +28,9 @@ while op != 6:
         pos = f.buscar_reserva(lista_reservas, nombre_eliminar)
         if pos != -1:
             lista_reservas.pop(pos)
+            print("La reserva ha sido eliminada")
         else:
-            print(f"La reserva del huésped {nombre_eliminar} no se encuentra registrada")
+            print(f"La reserva del huésped {nombre_eliminar} no ha sido encontrada")
             
     elif op == 4:
         f.confirmar_reserva(lista_reservas)
@@ -38,9 +39,9 @@ while op != 6:
         f.confirmar_reserva(lista_reservas)
         print("=== LISTAS DE RESERVAS ===\t")
         for r in lista_reservas:
-            print(f"Huésped: {r['huesped']}")
-            print(f"Habitación: {r['habitacion']}")
-            print(f"Noches: {r['noches']}")
+            print(f"Nombre del huésped: {r[posicion]['huesped']}")
+            print(f"Número de la Habitación: {r[posicion]['habitacion']}")
+            print(f"Noches de Hospedaje: {r[posicion]['noches']}")
             if r['confirmada']:
                 print("Estado: CONFIRMADA\t")
             else:
