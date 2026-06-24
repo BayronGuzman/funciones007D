@@ -41,4 +41,4 @@ while op != 6:
                 print("Estado: PENDIENTE\t")
             print("***********************************************")
     elif op == 6:
-        print("Gracias por usar el sistema. Vuelva Pronto")
+        print("Gracias por usar el programa. Vuelva Pronto")

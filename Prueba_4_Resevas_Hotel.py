@@ -1,4 +1,3 @@
-
 def mostrar_menu():
     print("=====MENU PRINCIPAL=====")
     print("1.- Agregar Reserva")
