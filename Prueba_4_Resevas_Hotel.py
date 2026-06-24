@@ -71,3 +71,15 @@ def confirmar_reserva(lista_r):
             r["confirmada"] = True
         else:
             r["confirmada"] = False
+            
+def mostrar_reserva(lista_r, posicion):
+    print("=== LISTAS DE RESERVAS ===\t")
+    for r in lista_r:
+        print(f"Nombre del huésped: {r[posicion]['huesped']}")
+        print(f"Número de la Habitación: {r[posicion]['habitacion']}")
+        print(f"Noches de Hospedaje: {r[posicion]['noches']}")
+        if r['confirmada']:
+            print("Estado: CONFIRMADA\t")
+        else:
+            print("Estado: PENDIENTE\t")
+        print("***********************************************")

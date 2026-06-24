@@ -37,16 +37,7 @@ while op != 6:
         
     elif op == 5:
         f.confirmar_reserva(lista_reservas)
-        print("=== LISTAS DE RESERVAS ===\t")
-        for r in lista_reservas:
-            print(f"Nombre del huésped: {r[posicion]['huesped']}")
-            print(f"Número de la Habitación: {r[posicion]['habitacion']}")
-            print(f"Noches de Hospedaje: {r[posicion]['noches']}")
-            if r['confirmada']:
-                print("Estado: CONFIRMADA\t")
-            else:
-                print("Estado: PENDIENTE\t")
-            print("***********************************************")
+        f.mostrar_reserva(lista_reservas)
             
     elif op == 6:
         print("Gracias por usar el programa. Vuelva Pronto")
