@@ -31,8 +31,8 @@ def validar_cantidad_noches(cantidad_noches):
     
 
 def agregar_reserva(lista):
-    nombre = input("Ingrese el nombre del huesped: ")
-    correcto = validar_nombre(nombre)
+    nombre_completo = input("Ingrese el nombre completo del huesped: ")
+    correcto = validar_nombre(nombre_completo)
     if not correcto:
         print("El nombre no puede estar vacío.")
         return
