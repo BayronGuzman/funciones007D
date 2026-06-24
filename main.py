@@ -18,6 +18,7 @@ while op != 6:
             print(f"Habitación: {lista_reservas[posicion]['habitacion']}")
             print(f"Noches: {lista_reservas[posicion]['noches']}")
             estado = "CONFIRMADA" if lista_reservas[posicion]['confirmada'] else "PENDIENTE"
+            print(f"Estado: {estado}")
             print("*********************************")
         else:
             print("No encontrado")
